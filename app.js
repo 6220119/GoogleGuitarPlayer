@@ -90,8 +90,7 @@
     }
 
     function copyUrlHandler() {
-      //window.prompt("Copy to clipboard: Ctrl+C, Enter", getShareUrl());
-      console.log(getShareUrl());
+      window.prompt("Copy to clipboard: Ctrl+C, Enter", getShareUrl());
     }
 
     function shareOnFb() {
