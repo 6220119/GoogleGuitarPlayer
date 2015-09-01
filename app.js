@@ -90,21 +90,32 @@
     }
 
     function copyUrlHandler() {
-      window.prompt("Copy to clipboard: Ctrl+C, Enter", getShareUrl());
+      //window.prompt("Copy to clipboard: Ctrl+C, Enter", getShareUrl());
+      console.log(getShareUrl());
     }
 
     function shareOnFb() {
       window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.encodeURIComponent(getShareUrl()), 'fbShareWindow', 'height=450, width=550, top=' + (window.innerHeight / 2 - 275) + ', left=' + (window.innerWidth / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
     }
 
-    playBtnElm.addEventListener('click', playHandler, false);
-    playBtnElm.addEventListener('touchstart', playHandler, false);
+    function removeEventListener(elm, handler) {
+      elm.removeEventListener('click', handler, false);
+      elm.removeEventListener('touchstart', handler, false);
+    }
 
-    copyUrlElm.addEventListener('click', copyUrlHandler, false);
-    copyUrlElm.addEventListener('touchstart', copyUrlHandler, false);
+    function addEventListener(elm, handler) {
+      elm.addEventListener('click', handler, false);
+      elm.addEventListener('touchstart', handler, false);
+    }
 
-    fbShareElm.addEventListener('click', shareOnFb, false);
-    fbShareElm.addEventListener('touchstart', shareOnFb, false);
+    // avoid duplicate event listeners due to double onloaded iframe event called twice!
+    removeEventListener(playBtnElm, playHandler);
+    removeEventListener(copyUrlElm, copyUrlHandler);
+    removeEventListener(fbShareElm, shareOnFb);
+
+    addEventListener(playBtnElm, playHandler);
+    addEventListener(copyUrlElm, copyUrlHandler);
+    addEventListener(fbShareElm, shareOnFb);
 
     window.sendKey = function (char){
       keyboard.dispatchEventsForAction(char, canvasElm);
