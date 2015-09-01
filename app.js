@@ -97,14 +97,14 @@
       window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.encodeURI(getShareUrl()), 'fbShareWindow', 'height=450, width=550, top=' + (window.innerHeight / 2 - 275) + ', left=' + (window.innerWidth / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
     }
 
-    playBtnElm.addEventListener('click', playHandler);
-    playBtnElm.addEventListener('touchstart', playHandler);
+    playBtnElm.addEventListener('click', playHandler, false);
+    playBtnElm.addEventListener('touchstart', playHandler, false);
 
-    copyUrlElm.addEventListener('click', copyUrlHandler);
-    copyUrlElm.addEventListener('touchstart', copyUrlHandler);
+    copyUrlElm.addEventListener('click', copyUrlHandler, false);
+    copyUrlElm.addEventListener('touchstart', copyUrlHandler, false);
 
-    fbShareElm.addEventListener('click', shareOnFb);
-    fbShareElm.addEventListener('touchstart', shareOnFb);
+    fbShareElm.addEventListener('click', shareOnFb, false);
+    fbShareElm.addEventListener('touchstart', shareOnFb, false);
 
     window.sendKey = function (char){
       keyboard.dispatchEventsForAction(char, canvasElm);
