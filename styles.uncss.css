@@ -47,7 +47,7 @@ body {
   width: 100%;
 }
 
-#gg-guitar-frame {
+#gg-guitar-frame iframe {
   height: 200px;
   padding: 0;
   border: none;

@@ -40,7 +40,15 @@
     return(false);
   }
 
-  document.getElementById('gg-guitar-frame').onload = function onIframeLoaded() {
+  var is1stLoad = true;
+  var iframeElm = document.createElement('iframe');
+  iframeElm.src = 'libs/gg-guitar/index.html';
+  iframeElm.onload = function onIframeLoaded() {
+    if (is1stLoad) {
+      // the doodle document body will change so onload event is called twice! we will ignore the 1st one.
+      is1stLoad = false;
+      return;
+    }
     var iframeElm = this;
     var playBtnElm = document.getElementById('gg-btn-play');
     var songContentElm = document.getElementById('gg-song-content');
@@ -104,13 +112,12 @@
 
     function addEventListener(elm, handler) {
       elm.addEventListener('click', handler, false);
-      elm.addEventListener('touchstart', handler, false);
     }
 
     // avoid duplicate event listeners due to double onloaded iframe event called twice!
-    removeEventListener(playBtnElm, playHandler);
-    removeEventListener(copyUrlElm, copyUrlHandler);
-    removeEventListener(fbShareElm, shareOnFb);
+    //removeEventListener(playBtnElm, playHandler);
+    //removeEventListener(copyUrlElm, copyUrlHandler);
+    //removeEventListener(fbShareElm, shareOnFb);
 
     addEventListener(playBtnElm, playHandler);
     addEventListener(copyUrlElm, copyUrlHandler);
@@ -152,4 +159,6 @@
       playHandler();
     }
   };
+
+  document.getElementById('gg-guitar-frame').appendChild(iframeElm);
 })(this);
