@@ -1,0 +1,54 @@
+html,
+body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.mdl-demo .mdl-layout__header-row {
+  padding-left: 40px;
+}
+
+.mdl-demo main > .mdl-layout__tab-panel {
+  padding: 48px 8px 8px;
+}
+
+.mdl-demo .mdl-card {
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.mdl-demo .mdl-layout__content section {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.mdl-demo section.section--center {
+  max-width: 860px;
+}
+
+.mdl-card__title > h4 {
+  margin: 0;
+}
+
+.mdl-card__supporting-text {
+  width: auto;
+}
+
+.gg-song-input {
+  width: 100%;
+}
+
+#gg-guitar-frame {
+  height: 200px;
+  padding: 0;
+  border: none;
+}
