@@ -86,7 +86,7 @@
       var delayQuery = getDelay();
       delayQuery = 'delay=' + delayQuery;
 
-      return window.location.href.replace(window.location.hash,'') + '?' + songQuery + '&' + delayQuery;
+      return location.href.replace(location.search, '').replace(location.hash, '') + '?' + songQuery + '&' + delayQuery;
     }
 
     function copyUrlHandler() {
