@@ -107,11 +107,12 @@
 
     function removeEventListener(elm, handler) {
       elm.removeEventListener('click', handler, false);
-      elm.removeEventListener('touchstart', handler, false);
+      //elm.removeEventListener('touchstart', handler, false);
     }
 
     function addEventListener(elm, handler) {
       elm.addEventListener('click', handler, false);
+      //elm.addEventListener('touchstart', handler, false);
     }
 
     // avoid duplicate event listeners due to double onloaded iframe event called twice!
