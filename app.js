@@ -94,7 +94,7 @@
     }
 
     function shareOnFb() {
-      window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.encodeURI(getShareUrl()), 'fbShareWindow', 'height=450, width=550, top=' + (window.innerHeight / 2 - 275) + ', left=' + (window.innerWidth / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+      window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.encodeURIComponent(getShareUrl()), 'fbShareWindow', 'height=450, width=550, top=' + (window.innerHeight / 2 - 275) + ', left=' + (window.innerWidth / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
     }
 
     playBtnElm.addEventListener('click', playHandler, false);
